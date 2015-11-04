@@ -1,0 +1,26 @@
+PROOT:=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt
+INSTANCE:=linux
+-include /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/Makefile.export
+CONFIGFILE:=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/config
+dir_subsystem_y=/home/lin/development/petalinux-v2013.10-final/components/subsystem/linux
+dir_kernel_y+=/kernel/linux-kernel/single/xlnx-3.8
+dir_u_boot_y+=/none/u-boot/single/u-boot-plnx
+dir_rootfs_y+=/none/rootfs/single/petalinux-rootfs
+depend_rootfs_y+=$(dir_kernel_y)
+ifeq ($(dir_kernel_y),)
+$(addprefix sub_build_component_,$(dir_kernel_y)):$(addprefix sub_build_component_,$(depend_kernel_y))
+$(addprefix sub_install_component_,$(dir_kernel_y)):$(addprefix sub_install_component_,$(depend_kernel_y))
+endif
+ifeq ($(dir_u-boot_y),)
+$(addprefix sub_build_component_,$(dir_u-boot_y)):$(addprefix sub_build_component_,$(depend_u-boot_y))
+$(addprefix sub_install_component_,$(dir_u-boot_y)):$(addprefix sub_install_component_,$(depend_u-boot_y))
+endif
+ifeq ($(dir_rootfs_y),)
+$(addprefix sub_build_component_,$(dir_rootfs_y)):$(addprefix sub_build_component_,$(depend_rootfs_y))
+$(addprefix sub_install_component_,$(dir_rootfs_y)):$(addprefix sub_install_component_,$(depend_rootfs_y))
+endif
+ifeq ($(dir_generic_y),)
+$(addprefix sub_build_component_,$(dir_generic_y)):$(addprefix sub_build_component_,$(depend_generic_y))
+$(addprefix sub_install_component_,$(dir_generic_y)):$(addprefix sub_install_component_,$(depend_generic_y))
+endif
+

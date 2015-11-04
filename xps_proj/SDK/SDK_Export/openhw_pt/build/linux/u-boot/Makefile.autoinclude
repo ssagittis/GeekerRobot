@@ -1,0 +1,7 @@
+PROOT:=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt
+INSTANCE:=linux/u-boot
+-include /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/Makefile.export
+-include /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/u-boot/Makefile.export
+CONFIGFILE:=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/config
+dir_u_boot_y=/home/lin/development/petalinux-v2013.10-final/components/u-boot/u-boot-plnx
+

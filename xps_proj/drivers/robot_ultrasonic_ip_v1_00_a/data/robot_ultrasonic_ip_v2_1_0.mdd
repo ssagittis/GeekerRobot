@@ -1,0 +1,15 @@
+##############################################################################
+## Filename:          H:\Xilinx_Xps\openhw_pro\xps_proj/drivers/robot_ultrasonic_ip_v1_00_a/data/robot_ultrasonic_ip_v2_1_0.mdd
+## Description:       Microprocessor Driver Definition
+## Date:              Thu Jul 09 18:03:58 2015 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+OPTION psf_version = 2.1.0;
+
+BEGIN DRIVER robot_ultrasonic_ip
+
+  OPTION supported_peripherals = (robot_ultrasonic_ip);
+  OPTION depends = (common_v1_00_a);
+  OPTION copyfiles = all;
+
+END DRIVER

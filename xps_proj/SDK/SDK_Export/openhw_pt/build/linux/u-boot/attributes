@@ -1,0 +1,8 @@
+TYPE:u-boot
+COMPONENT_FILE:Makefile
+BUILD_FILE:Makefile
+BUILD_FILE:petalinux-arm-auto.h
+BUILD_FILE:petalinux-auto-board.h.template
+BUILD_FILE:petalinux-microblaze-auto.h
+BUILDALL:pre-build build post-build pre-install install
+BUILDconfig:notimplemented

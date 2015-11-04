@@ -1,0 +1,33 @@
+PROOT:=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt
+INSTANCE:=linux/rootfs
+-include /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/Makefile.export
+-include /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/rootfs/Makefile.export
+CONFIGFILE:=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/configs/rootfs/config
+dir_rootfs_y=/home/lin/development/petalinux-v2013.10-final/components/rootfs/petalinux-rootfs
+dir_packages_repo_y+=/none/packages-repo/single/plnx-repo
+dir_apps_y+=/none/apps/multi/fwupgrade
+depend_apps_y+=$(dir_packages_repo_y)
+depend_apps_y+=$(dir_libs_y)
+dir_apps_y+=/none/apps/multi/peekpoke
+depend_apps_y+=$(dir_packages_repo_y)
+depend_apps_y+=$(dir_libs_y)
+dir_apps_y+=/none/apps/multi/uWeb
+depend_apps_y+=$(dir_packages_repo_y)
+depend_apps_y+=$(dir_libs_y)
+ifeq ($(dir_packages-repo_y),)
+$(addprefix sub_build_component_,$(dir_packages-repo_y)):$(addprefix sub_build_component_,$(depend_packages-repo_y))
+$(addprefix sub_install_component_,$(dir_packages-repo_y)):$(addprefix sub_install_component_,$(depend_packages-repo_y))
+endif
+ifeq ($(dir_modules_y),)
+$(addprefix sub_build_component_,$(dir_modules_y)):$(addprefix sub_build_component_,$(depend_modules_y))
+$(addprefix sub_install_component_,$(dir_modules_y)):$(addprefix sub_install_component_,$(depend_modules_y))
+endif
+ifeq ($(dir_apps_y),)
+$(addprefix sub_build_component_,$(dir_apps_y)):$(addprefix sub_build_component_,$(depend_apps_y))
+$(addprefix sub_install_component_,$(dir_apps_y)):$(addprefix sub_install_component_,$(depend_apps_y))
+endif
+ifeq ($(dir_libs_y),)
+$(addprefix sub_build_component_,$(dir_libs_y)):$(addprefix sub_build_component_,$(depend_libs_y))
+$(addprefix sub_install_component_,$(dir_libs_y)):$(addprefix sub_install_component_,$(depend_libs_y))
+endif
+

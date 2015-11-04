@@ -1,0 +1,12 @@
+TYPE:rootfs
+BUILD_FILE:Makefile
+BUILD_FILE:Makefile.export
+BUILD_FILE:sys_init
+BUILD_FILE:Kconfig.part
+BUILD_FILE:manual_mdev.mak
+BUILD_FILE:generate-export
+SUBCOMPONENT:0::packages-repo::
+SUBCOMPONENT:1::modules:multi:
+SUBCOMPONENT:2::apps:multi:0 3
+SUBCOMPONENT:3::libs:multi:0
+BUILDALL:pre-build build post-build pre-install install

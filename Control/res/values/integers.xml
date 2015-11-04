@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="portInDefault">8001</integer>
+    <integer name="portOutDefault">8002</integer>
+    <integer name="portVideoDefault">8003</integer>
+</resources>

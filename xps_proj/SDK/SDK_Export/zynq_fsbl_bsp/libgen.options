@@ -1,0 +1,3 @@
+PROCESSOR=ps7_cortexa9_0
+REPOSITORIES=-lp /home/lin/development/petalinux-v2013.10-final/components/edk_user_repository
+HWSPEC=../xps_proj_hw_platform/system.xml

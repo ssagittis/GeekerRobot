@@ -1,0 +1,7 @@
+1158327018
+
+command_total_run_petalinux-config=1
+command_failures_petalinux-config=0
+command_option_petalinux-config=--get-hw-description
+command_option_petalinux-config=-p
+command_option_value_petalinux-config=../openhw_pt

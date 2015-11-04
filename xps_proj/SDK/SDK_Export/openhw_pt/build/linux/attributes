@@ -1,0 +1,14 @@
+TYPE:subsystem
+BUILD_FILE:Makefile
+BUILD_FILE:Makefile.export
+BUILD_FILE:Makefile.package
+BUILD_FILE:sys_init
+BUILD_FILE:Kconfig.part
+BUILD_FILE:generate-export
+BUILD_FILE:hw-description
+##SUBCOMPONENT description: [ID]:[INSTANCE]:<TYPE>:[multi|remote|none]:[BUILD_DEPENDENCY]
+SUBCOMPONENT:0:kernel:linux-kernel:remote:
+SUBCOMPONENT:1::u-boot:remote:
+SUBCOMPONENT:2::rootfs::0
+SUBCOMPONENT:3::generic:multi:0 1 2 3
+BUILDALL:pre-build build post-build pre-install install post-install package

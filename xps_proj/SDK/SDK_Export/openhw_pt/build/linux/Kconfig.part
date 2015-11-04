@@ -1,0 +1,715 @@
+choice
+	prompt "System Architecture"
+	default SUBSYSTEM_ARCH_ARM
+
+config SUBSYSTEM_ARCH_ARM
+	bool "arm"
+	help
+	  Choose this option to specify ARM as the SUBSYSTEM architecture
+
+config SUBSYSTEM_ARCH_MICROBLAZE
+	bool "microblaze"
+	help
+	  Choose this option to specify MicroBlaze as the SUBSYSTEM architecture
+
+endchoice
+
+choice
+	prompt "Endian"
+	default SUBSYSTEM_ENDIAN_LITTLE
+
+config SUBSYSTEM_ENDIAN_LITTLE
+	bool "little"
+	help
+	  Choose this option to specify the architecture is little endian
+
+endchoice
+
+config SUBSYSTEM_KERNEL_BASE_ADDRESS
+	hex "Kernel base address"
+	default 0x0
+	depends on SUBSYSTEM_ARCH_ARM
+	help
+	  Linux kernel base address
+
+choice
+	prompt "System boot device"
+	default SUBSYSTEM_BOOTDEV_QSPI
+	depends on SUBSYSTEM_ARCH_ARM
+
+config SUBSYSTEM_BOOTDEV_NOR
+	bool "NOR flash"
+	help
+	  Choose this option to configure your PetaLinux Zynq build to
+	  boot from Nor flash
+
+config SUBSYSTEM_BOOTDEV_NAND
+	bool "NAND flash"
+	help
+	  Choose this option to configure your PetaLinux Zynq build to
+	  boot from NAND flash
+
+config SUBSYSTEM_BOOTDEV_QSPI
+	bool "QSPI flash"
+	help
+	  Choose this option to configure your PetaLinux Zynq build to
+	  boot from QSPI flash
+
+config SUBSYSTEM_BOOTDEV_SD
+	bool "SD card"
+	help
+	  Choose this option to configure your PetaLinux Zynq build to
+	  boot from SD card
+
+config SUBSYSTEM_BOOTDEV_OTHER
+	bool "other"
+	help
+	  Choose this option to configure your PetaLinux Zynq build to
+	  boot from other source
+
+endchoice
+
+choice
+	prompt "Root filesystem type"
+	default SUBSYSTEM_ROOTFS_INITRAMFS
+
+config SUBSYSTEM_ROOTFS_INITRAMFS
+	bool "INITRAMFS"
+	help
+	  Choose this option to configure your PetaLinux build to use
+	  the kernel INITRAMFS mechanism for the root filesystem.
+
+	  The root filesystem will be writeable, but not persistent,
+	  meaning that any changes are lost upon reboot.
+
+config SUBSYSTEM_ROOTFS_JFFS2
+	bool "JFFS2"
+	help
+	  Choose this option to configure your PetaLinux build for the
+	  root filesystem to be mounted on a JFFS2 flash partition.
+
+	  You must also ensure that your Flash Partition Table (see below)
+	  contains a partition named "jffs2" and is of a suitable size.
+
+config SUBSYSTEM_ROOTFS_NFS
+	bool "NFS"
+	help
+	  Choose this setting to configure your PetaLinux build for NFS Root.
+
+	  Your workstation must be properly configured for NFS, and the
+	  NFS root directory (see below) must be exported properly.
+
+config SUBSYSTEM_ROOTFS_SD
+	bool "SD card"
+	help
+	  Choose this setting to configure your PetaLinux build for SD Root.
+
+config SUBSYSTEM_ROOTFS_OTHER
+	bool "other"
+	help
+	  Choose this setting to configure your PetaLinux build for other root.
+
+	  You will need to manually generate the Root FS image.
+
+endchoice
+
+choice
+	prompt "jffs2 erase block size(KByte)"
+	default SUBSYSTEM_JFFS2_ERASE_SIZE_64
+	depends on SUBSYSTEM_ROOTFS_JFFS2
+config SUBSYSTEM_JFFS2_ERASE_SIZE_16
+	bool "jffs2 erase block size: 16KiB"
+config SUBSYSTEM_JFFS2_ERASE_SIZE_32
+	bool "jffs2 erase block size: 32KiB"
+config SUBSYSTEM_JFFS2_ERASE_SIZE_64
+	bool "jffs2 erase block size: 64KiB"
+config SUBSYSTEM_JFFS2_ERASE_SIZE_128
+	bool "jffs2 erase block size: 128KiB"
+config SUBSYSTEM_JFFS2_ERASE_SIZE_256
+	bool "jffs2 erase block size: 256KiB"
+config SUBSYSTEM_JFFS2_ERASE_SIZE_512
+	 bool "jffs2 erase block size: 512KiB"
+endchoice
+
+config SUBSYSTEM_NFSROOT_DIR
+	string "Location of NFS root directory"
+	depends on SUBSYSTEM_ROOTFS_NFS
+	default "/tftpboot/nfsroot"
+
+config SUBSYSTEM_SDROOT_DEV
+	string "Device node of SD device"
+	depends on SUBSYSTEM_ROOTFS_SD
+	default "/dev/mmcblk0p2"
+
+config SUBSYSTEM_HOSTNAME
+	string "Host name"
+	default "petalinux"
+	help
+	 The host name of your SUBSYSTEM, set at startup.
+
+config SUBSYSTEM_PRODUCT
+	string "Product name"
+	default ""
+	help
+	  This is an string inserted into /etc/product during the build.
+
+config SUBSYSTEM_FW_VERSION
+	string "Firmware Version"
+	default "1.00"
+	help
+	  This is an arbitrary string value that is inserted into
+	  /etc/version during the build.
+
+menu "Kernel command line"
+
+config SUBSYSTEM_USER_CMDLINE
+	string "Kernel command line (user set)"
+	default ""
+	help
+	  Specify any commandline arguments you wish to pass to the kernel
+	  at boot.
+
+config SUBSYSTEM_SYS_CMDLINE
+	string "Kernel command line (NO EDIT!)"
+	default ""
+	help
+	  SUBSYSTEM-generated commandline fragment.
+
+	  WARNING: Do not edit, your changes will be lost.
+
+endmenu
+
+comment "Network configuration"
+menu "Network Addresses"
+
+config SUBSYSTEM_RANDOMISE_MAC_ADDRESS
+	bool "Randomise MAC address"
+	default "n"
+	help
+	   Select this option to generate a random MAC SUBSYSTEM address - useful for
+	   testing in networks where multiple PetaLinux SUBSYSTEMs are running
+
+config SUBSYSTEM_MAC_ADDRESS_PATTERN
+	string "Template for randomised MAC addresses"
+	default "00:0a:35:00:??:??"
+	depends on SUBSYSTEM_RANDOMISE_MAC_ADDRESS
+	help
+	    Pattern for generating random MAC addresses - question mark characters
+	    will be replaced by random hex digits
+
+config SUBSYSTEM_MAC_ADDRESS
+	string "Ethernet MAC address"
+	default "00:0a:35:00:22:01"
+	help
+	 The MAC address of your target SUBSYSTEM.
+	 Used for both U-Boot and Linux.
+
+config SUBSYSTEM_USE_DHCP
+	bool "Obtain IP address automatically"
+	default y
+	select ROOTFS_PACKAGES_BUSYBOX_UDHCPC
+	help
+	 Set this if you would like your SUBSYSTEM to use DHCP for obtaining
+	 an IP address.
+
+config SUBSYSTEM_IP_ADDRESS
+	string "Static IP address"
+	depends on !SUBSYSTEM_USE_DHCP
+	default "192.168.0.10"
+	help
+	 The IP address of your main network interface when static network
+	 address assignment is used.
+
+	 Used by both U-Boot and Linux.
+
+config SUBSYSTEM_IP_NETMASK
+	string "Static IP netmask"
+	depends on !SUBSYSTEM_USE_DHCP
+	default "255.255.255.0"
+	help
+	 Default netmask when static network address assignment is used.
+
+config SUBSYSTEM_IP_GATEWAY
+	string "Static IP gateway"
+	depends on !SUBSYSTEM_USE_DHCP
+	default "192.168.0.1"
+	help
+	 Default gateway when static network address assignment is used.
+
+config SUBSYSTEM_SERVERIP_ADDRESS
+	string "Server IP address"
+	default "AUTO"
+	help
+	 The IP address of your file server in the main network interface.
+	 Used for both U-Boot and Linux.
+
+	 Specify the special value "AUTO" to use the IP address of your
+	 development host.
+
+endmenu
+
+config SUBSYSTEM_BUILD_UBOOT
+	bool "Build u-boot"
+	default y
+
+choice
+	prompt "U-boot config"
+	default SUBSYSTEM_UBOOT_CONFIG_PETALINUX
+
+config SUBSYSTEM_UBOOT_CONFIG_PETALINUX
+	bool "PetaLinux u-boot config"
+	help
+	  Choose this option to use PetaLinux u-boot configuration
+
+config SUBSYSTEM_UBOOT_CONFIG_OTHER
+	bool "other"
+	help
+	  Choose this option to specify other u-boot config
+endchoice
+
+config SUBSYSTEM_UBOOT_CONFIG_TARGET
+	string "u-boot config target"
+	depends on SUBSYSTEM_BUILD_UBOOT
+	depends on SUBSYSTEM_UBOOT_CONFIG_OTHER
+	help
+	  Specify a u-boot config target when building u-boot, it will run 
+	  run u-boot XXX config target: make XXX_config to configure u-boot
+	  first.
+
+comment "System Image Settings"
+
+config SUBSYSTEM_UIMAGE_NAME
+	string "name for uboot bootable kernel image"
+	default "image.ub"
+	depends on SUBSYSTEM_BUILD_UBOOT
+	help
+	  Specify the name of uboot bootable kernel image
+
+choice
+	prompt "Kernel image HASH checking"
+	default SUBSYSTEM_UIMAGE_HASH_CRC32
+	depends on SUBSYSTEM_BUILD_UBOOT && !SUBSYSTEM_OLD_UIMAGE
+
+config SUBSYSTEM_UIMAGE_HASH_NONE
+	bool "none"
+	help
+	  Disable hash checking
+config SUBSYSTEM_UIMAGE_HASH_CRC32
+	bool "crc32"
+	help
+	  Enable crc32 hash checking
+config SUBSYSTEM_UIMAGE_HASH_SHA1
+	bool "sha1"
+	help
+	  Enable sha1 hash checking
+config SUBSYSTEM_UIMAGE_HASH_BOTH
+	bool "both"
+	help
+	  Enable both crc32 and sha1 hash checking
+
+endchoice
+
+config SUBSYSTEM_COMPRESS_IMAGE
+	bool "Compress kernel image"
+	depends on SUBSYSTEM_BUILD_UBOOT
+	help
+	 Set this if you would like to compress the u-boot bootable kernel
+	 image.
+
+config SUBSYSTEM_NETBOOT_OFFSET
+	hex "netboot offset"
+	default 0x1000000
+	depends on SUBSYSTEM_BUILD_UBOOT
+	help
+	 Set this to define the memory offset to load the image of netboot command in u-boot.
+
+config SUBSYSTEM_COPY_TO_TFTPBOOT
+	bool "Copy final image to tftpboot"
+	help
+	 Set this if you would like the final build image to be automatically
+	 copied to your TFTP server directory.
+
+config SUBSYSTEM_TFTPBOOT_DIR
+	string "tftpboot directory"
+	depends on SUBSYSTEM_COPY_TO_TFTPBOOT
+	default "/tftpboot"
+	help
+	 The directory that your TFTP server serves its files from.
+
+comment "Bootloader settings"
+config SUBSYSTEM_DTB_BOOT
+	bool "Boot image with the DTB partition"
+	default n
+	help
+	 Select to boot with the DTB partition
+
+comment "Flash memory settings"
+
+choice
+	prompt "System Flash Type"
+	default SUBSYSTEM_FLASH_TYPE_PARALLEL
+config SUBSYSTEM_FLASH_TYPE_PARALLEL
+	bool "Parallel Flash"
+	help
+	  Choose this option to configure Parallel Flash as your SUBSYSTEM Flash
+config SUBSYSTEM_FLASH_TYPE_SPI
+	bool "SPI Flash"
+	help
+	  Choose this option configure SPI Flash as your SUBSYSTEM Flash
+config SUBSYSTEM_FLASH_TYPE_NAND
+	bool "NAND Flash"
+	help
+	  Choose this option configure NAND Flash as your SUBSYSTEM Flash
+endchoice
+
+choice
+	prompt "SPI Flash Device"
+	default SUBSYSTEM_SPI_FLASH_DEV_PETALINUX
+	depends on SUBSYSTEM_FLASH_TYPE_SPI
+config SUBSYSTEM_SPI_FLASH_DEV_WINBOND_W25
+	bool "WinBond, w25xXX/w25qXX"
+config SUBSYSTEM_SPI_FLASH_DEV_PETALINUX
+	bool "PetaLinux Supported SPI Flashes"
+	help
+	  This is for PetaLinux supported SPI Flashes:
+	  * w25q64
+	  * n25q128
+config SUBSYSTEM_SPI_FLASH_DEV_OTHERS
+	bool "others"
+	help
+	  If the others option is set, PetaLinux will not auto select a
+	  SPI kernel driver or a u-boot driver. User needs to configure
+	  them and change the dts file manually.
+endchoice
+
+choice
+	prompt "Flash SPI Mode"
+	default SUBSYSTEM_SPI_FLASH_SPI_MODE0
+	depends on SUBSYSTEM_FLASH_TYPE_SPI
+config SUBSYSTEM_SPI_FLASH_SPI_MODE0
+	bool "spi-mode-0"
+	help
+	  CPOL=0 && CPHA=0
+config SUBSYSTEM_SPI_FLASH_SPI_MODE1
+	bool "spi-mode-1"
+	help
+	  CPOL=0 && CPHA=1
+config SUBSYSTEM_SPI_FLASH_SPI_MODE2
+	bool "spi-mode-2"
+	help
+	  CPOL=1 && CPHA=0
+config SUBSYSTEM_SPI_FLASH_SPI_MODE3
+	bool "spi-mode-3"
+	help
+	  CPOL=1 && CPHA=1
+endchoice
+
+choice
+	prompt "NAND Flash Device"
+	default SUBSYSTEM_NAND_FLASH_DEV_GENERIC
+	depends on SUBSYSTEM_FLASH_TYPE_NAND
+
+config SUBSYSTEM_NAND_FLASH_DEV_GENERIC
+	bool "Generic NAND driver"
+config SUBSYSTEM_NAND_FLASH_DEV_OTHERS
+	bool "others"
+	help
+	  If the others option is set, PetaLinux will not auto select a
+	  NAND kernel driver or a u-boot driver. User needs to configure
+	  them and change the dts file manually.
+endchoice
+
+menu "Flash Partition Table"
+
+menuconfig SUBSYSTEM_ADV_PARTITIONS
+	bool "Advanced Partition Configuration"
+
+if SUBSYSTEM_ADV_PARTITIONS
+	config SUBSYSTEM_BOOT_PARTITION
+		string "boot partition name"
+		default "boot"
+
+	config SUBSYSTEM_UBOOTENV_PARTITION
+		depends on SUBSYSTEM_BUILD_UBOOT
+		string "uboot environment partition name"
+		default "bootenv"
+
+	config SUBSYSTEM_DTB_PARTITION
+		depends on SUBSYSTEM_DTB_BOOT
+		string "DTB partition name"
+		default "dtb"
+
+	config SUBSYSTEM_IMAGE_PARTITION
+		string "Linux image partition name"
+		default "image"
+
+	config SUBSYSTEM_JFFS2_PARTITION
+		depends on SUBSYSTEM_ROOTFS_JFFS2
+		string "JFFS2 root partition name"
+		default "jffs2"
+endif
+
+if !SUBSYSTEM_ADV_PARTITIONS
+	config SUBSYSTEM_BOOT_PARTITION
+		string
+		default "boot"
+
+	config SUBSYSTEM_UBOOTENV_PARTITION
+		depends on SUBSYSTEM_BUILD_UBOOT
+		string
+		default "bootenv"
+
+	config SUBSYSTEM_DTB_PARTITION
+		depends on SUBSYSTEM_DTB_BOOT
+		string
+		default "dtb"
+
+	config SUBSYSTEM_IMAGE_PARTITION
+		string
+		default "image"
+
+	config SUBSYSTEM_JFFS2_PARTITION
+		depends on SUBSYSTEM_ROOTFS_JFFS2
+		string
+		default "jffs2"
+
+endif
+
+comment "Partition 1"
+config SUBSYSTEM_PARTITION1_NAME
+	string "name"
+	default "boot"
+
+config SUBSYSTEM_PARTITION1_SIZE
+	hex "size"
+	default 0x40000
+
+config SUBSYSTEM_PARTITION1_FLAGS
+	depends on SUBSYSTEM_PARTITION1_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+	  which marks the partition read-only.
+
+comment "Partition 2"
+	depends on SUBSYSTEM_PARTITION1_NAME != ""
+
+config SUBSYSTEM_PARTITION2_NAME
+	depends on SUBSYSTEM_PARTITION1_NAME != ""
+	string "name"
+	default "bootenv"
+
+config SUBSYSTEM_PARTITION2_SIZE
+	depends on SUBSYSTEM_PARTITION1_NAME != ""
+	hex "size"
+	default 0x20000
+
+config SUBSYSTEM_PARTITION2_FLAGS
+	depends on SUBSYSTEM_PARTITION2_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+	  which marks the partition read-only.
+
+comment "Partition 3"
+	depends on SUBSYSTEM_PARTITION2_NAME != ""
+
+config SUBSYSTEM_PARTITION3_NAME
+	depends on SUBSYSTEM_PARTITION2_NAME != ""
+	string "name"
+	default "config"
+
+config SUBSYSTEM_PARTITION3_SIZE
+	depends on SUBSYSTEM_PARTITION2_NAME != ""
+	hex "size"
+	default 0x20000
+
+config SUBSYSTEM_PARTITION3_FLAGS
+	depends on SUBSYSTEM_PARTITION3_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+	  which marks the partition read-only.
+
+comment "Partition 4"
+	depends on SUBSYSTEM_PARTITION3_NAME != ""
+
+config SUBSYSTEM_PARTITION4_NAME
+	depends on SUBSYSTEM_PARTITION3_NAME != ""
+	string "name"
+	default "image"
+
+config SUBSYSTEM_PARTITION4_SIZE
+	depends on SUBSYSTEM_PARTITION3_NAME != ""
+	hex "size"
+	default 0x400000
+
+config SUBSYSTEM_PARTITION4_FLAGS
+	depends on SUBSYSTEM_PARTITION4_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+	  which marks the partition read-only.
+
+comment "Partition 5"
+	depends on SUBSYSTEM_PARTITION4_NAME != ""
+
+
+config SUBSYSTEM_PARTITION5_NAME
+	depends on SUBSYSTEM_PARTITION4_NAME != ""
+	string "name"
+	default "spare"
+
+config SUBSYSTEM_PARTITION5_SIZE
+	depends on SUBSYSTEM_PARTITION4_NAME != ""
+	hex "size"
+	default 0x0
+
+config SUBSYSTEM_PARTITION5_FLAGS
+	depends on SUBSYSTEM_PARTITION5_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+	  which marks the partition read-only.
+
+comment "Partition 6"
+	depends on SUBSYSTEM_PARTITION5_NAME != ""
+
+config SUBSYSTEM_PARTITION6_NAME
+	depends on SUBSYSTEM_PARTITION5_NAME != ""
+	string "name"
+	default ""
+
+config SUBSYSTEM_PARTITION6_SIZE
+	depends on SUBSYSTEM_PARTITION5_NAME != ""
+	hex "size"
+	default 0x0
+
+config SUBSYSTEM_PARTITION6_FLAGS
+	depends on SUBSYSTEM_PARTITION6_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+	  which marks the partition read-only.
+
+comment "Partition 7"
+	depends on SUBSYSTEM_PARTITION6_NAME != ""
+
+config SUBSYSTEM_PARTITION7_NAME
+	depends on SUBSYSTEM_PARTITION6_NAME != ""
+	string "name"
+	default ""
+
+config SUBSYSTEM_PARTITION7_SIZE
+	depends on SUBSYSTEM_PARTITION6_NAME != ""
+	hex "size"
+	default 0x0
+
+config SUBSYSTEM_PARTITION7_FLAGS
+	depends on SUBSYSTEM_PARTITION7_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+	  which marks the partition read-only.
+
+comment "Partition 8"
+	depends on SUBSYSTEM_PARTITION7_NAME != ""
+
+config SUBSYSTEM_PARTITION8_NAME
+	depends on SUBSYSTEM_PARTITION7_NAME != ""
+	string "name"
+	default ""
+
+config SUBSYSTEM_PARTITION8_SIZE
+	depends on SUBSYSTEM_PARTITION7_NAME != ""
+	hex "size"
+	default 0x0
+
+config SUBSYSTEM_PARTITION8_FLAGS
+	depends on SUBSYSTEM_PARTITION8_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+	  which marks the partition read-only.
+
+comment "Partition 9"
+	depends on SUBSYSTEM_PARTITION8_NAME != ""
+
+config SUBSYSTEM_PARTITION9_NAME
+	depends on SUBSYSTEM_PARTITION8_NAME != ""
+	string "name"
+	default ""
+
+config SUBSYSTEM_PARTITION9_SIZE
+	depends on SUBSYSTEM_PARTITION8_NAME != ""
+	hex "size"
+	default 0x0
+
+config SUBSYSTEM_PARTITION9_FLAGS
+	depends on SUBSYSTEM_PARTITION9_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+	  which marks the partition read-only.
+
+
+comment "Partition 10"
+	depends on SUBSYSTEM_PARTITION9_NAME != ""
+
+config SUBSYSTEM_PARTITION10_NAME
+	depends on SUBSYSTEM_PARTITION9_NAME != ""
+	string "name"
+	default ""
+
+config SUBSYSTEM_PARTITION10_SIZE
+	depends on SUBSYSTEM_PARTITION9_NAME != ""
+	hex "size"
+	default 0x0
+
+config SUBSYSTEM_PARTITION10_FLAGS
+	depends on SUBSYSTEM_PARTITION10_NAME != ""
+	depends on SUBSYSTEM_ADV_PARTITIONS
+	string "Flash partition flags"
+	default ""
+	help
+	  Pass the flash partition flags to DTS. Use comma separation for multiple
+	  flags, e.g. abc,def,...,xyz
+	  Currently, the supported string is RO ("read-only" string) flag.
+
+endmenu

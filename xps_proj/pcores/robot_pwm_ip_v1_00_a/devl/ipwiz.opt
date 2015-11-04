@@ -1,0 +1,10 @@
+-batch 
+-create robot_pwm_ip 
+-ver 1.00.a 
+-dir "H:\Xilinx_Xps\openhw_pro\xps_proj" 
+-lang verilog 
+-bus axi4lite s 
+-reg 2 
+-xps 
+-ise 
+-driver 

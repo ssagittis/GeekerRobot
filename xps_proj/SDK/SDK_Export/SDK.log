@@ -1,0 +1,77 @@
+21:41:56.591 INFO  - Processing command line option -hwspec H:\Xilinx_Xps\openhw_pro\xps_proj\SDK\SDK_Export\hw\system.xml. 
+22:01:18.199 INFO  - Invoking Bootgen:  
+22:01:20.133 INFO  - Bootgen command execution is done. 
+11:44:58.408 INFO  - Saving repository preferences. 
+11:44:58.432 INFO  - Reading in cores from global repositories: 
+		 /home/lin/development/petalinux-v2013.10-final/components/edk_user_repository 
+11:44:58.481 INFO  - Updating libgen.options on all BSP projects. 
+11:44:58.484 INFO  - Cleaning BSP projects in the workspace. 
+11:45:39.864 WARN  - Unable to determine location of documentation for OS petalinux. 
+19:49:15.288 INFO  - Processing command line option -hwspec /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/system.xml. 
+19:49:17.652 INFO  - The hardware specification for project 'xps_proj_hw_platform' is different from /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/system.xml. 
+19:49:18.313 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/system.xml into /xps_proj_hw_platform/system.xml. 
+19:49:18.462 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/system.bit into /xps_proj_hw_platform/system.bit. 
+19:49:20.298 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/ps7_init.c into /xps_proj_hw_platform/ps7_init.c. 
+19:49:20.312 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/ps7_init.h into /xps_proj_hw_platform/ps7_init.h. 
+19:49:20.343 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/ps7_init.html into /xps_proj_hw_platform/ps7_init.html. 
+19:49:20.353 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/ps7_init.tcl into /xps_proj_hw_platform/ps7_init.tcl. 
+19:49:20.898 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+19:49:21.791 INFO  - Restoring global repository preferences: 
+		 /home/lin/development/petalinux-v2013.10-final/components/edk_user_repository 
+19:49:50.249 INFO  - Updating hardware inferred compiler options for zynq_fsbl. 
+19:49:50.307 INFO  - Clearing existing target manager status. 
+19:50:11.774 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/xps_proj_hw_platform/ps7_init.c into /zynq_fsbl/src/ps7_init.c. 
+19:50:11.779 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/xps_proj_hw_platform/ps7_init.h into /zynq_fsbl/src/ps7_init.h. 
+19:50:11.819 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/xps_proj_hw_platform/ps7_init.html into /zynq_fsbl/src/ps7_init.html. 
+19:50:11.822 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/xps_proj_hw_platform/ps7_init.tcl into /zynq_fsbl/src/ps7_init.tcl. 
+19:50:11.841 INFO  - Workspace synchronized with the new hardware specification file. Cleaning dependent projects... 
+20:06:52.100 WARN  - Unable to determine location of documentation for OS petalinux. 
+20:07:49.773 ERROR - Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+23:10:02.998 INFO  - Invoking Bootgen:  
+23:10:04.411 INFO  - Bootgen command execution is done. 
+23:51:35.424 INFO  - Restoring global repository preferences: 
+		 /home/lin/development/petalinux-v2013.10-final/components/edk_user_repository 
+23:52:01.091 WARN  - Unable to determine location of documentation for OS petalinux. 
+19:03:58.700 INFO  - Settings changed on project zynq_fsbl_bsp. Triggering a rebuild... 
+19:04:51.879 INFO  - Refreshed build settings on project zynq_fsbl 
+19:14:22.657 INFO  - Settings changed on project zynq_fsbl_bsp. Triggering a rebuild... 
+19:14:23.011 INFO  - Refreshed build settings on project zynq_fsbl 
+19:14:48.580 WARN  - Unable to determine location of documentation for OS petalinux. 
+19:15:10.291 INFO  - Settings changed on project petalinux_bsp_0. Triggering a rebuild... 
+20:21:26.592 INFO  - Invoking Bootgen:  
+20:21:27.201 INFO  - Bootgen command execution is done. 
+08:34:08.846 INFO  - Processing command line option -hwspec /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/system.xml. 
+08:34:09.607 INFO  - The hardware specification for project 'xps_proj_hw_platform' is different from /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/system.xml. 
+08:34:10.212 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/system.xml into /xps_proj_hw_platform/system.xml. 
+08:34:10.225 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/ps7_init.c into /xps_proj_hw_platform/ps7_init.c. 
+08:34:10.227 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/ps7_init.h into /xps_proj_hw_platform/ps7_init.h. 
+08:34:10.238 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/ps7_init.html into /xps_proj_hw_platform/ps7_init.html. 
+08:34:10.240 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/ps7_init.tcl into /xps_proj_hw_platform/ps7_init.tcl. 
+08:34:10.913 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+08:34:45.020 INFO  - Updating hardware inferred compiler options for zynq_fsbl. 
+08:34:45.772 INFO  - Updating hardware inferred compiler options for zynqfsbl. 
+08:34:45.817 INFO  - Clearing existing target manager status. 
+08:34:51.272 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/xps_proj_hw_platform/ps7_init.c into /zynq_fsbl/src/ps7_init.c. 
+08:34:53.639 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/xps_proj_hw_platform/ps7_init.h into /zynq_fsbl/src/ps7_init.h. 
+08:34:53.724 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/xps_proj_hw_platform/ps7_init.html into /zynq_fsbl/src/ps7_init.html. 
+08:34:53.730 INFO  - Copied contents of /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/xps_proj_hw_platform/ps7_init.tcl into /zynq_fsbl/src/ps7_init.tcl. 
+08:40:22.314 INFO  - Specified output file already exists 
+08:40:26.485 INFO  - Invoking Bootgen:  
+08:40:27.557 INFO  - Bootgen command execution is done. 
+14:48:10.379 ERROR - Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+21:16:14.321 INFO  - Processing command line option -hwspec /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/hw/system.xml. 
+21:16:43.731 ERROR - Unable to read in MSS file /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/zedfsbl_bsp/system.mss. 
+22:55:50.885 ERROR - Unable to read in MSS file /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/zedfsbl_bsp/system.mss. 
+22:55:50.936 ERROR - Unable to read in MSS file /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/zedfsbl_bsp/system.mss. 
+22:55:50.944 WARN  - Unable to determine location of documentation for OS . 
+22:55:50.982 ERROR - Unable to read in MSS file /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/zedfsbl_bsp/system.mss. 
+22:55:51.255 ERROR - Unable to read in MSS file /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/zedfsbl_bsp/system.mss. 
+09:19:03.316 INFO  - Restoring global repository preferences: 
+		 /home/lin/development/petalinux-v2013.10-final/components/edk_user_repository 
+09:19:03.871 ERROR - Unable to read in MSS file /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/petalinux_bsp_0/system.mss. 
+09:20:31.546 INFO  - Specified output file already exists 
+09:20:34.030 INFO  - Invoking Bootgen:  
+09:20:34.661 INFO  - Bootgen command execution is done. 
+09:20:59.856 INFO  - Specified output file already exists 
+09:21:01.622 INFO  - Invoking Bootgen:  
+09:21:02.149 INFO  - Bootgen command execution is done. 

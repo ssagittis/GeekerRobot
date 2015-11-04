@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "H:\Xilinx_Xps\openhw_pro\xps_proj\pcores\robot_ultrasonic_ip_v1_00_a\devl\synthesis\robot_ultrasonic_ip_xst.prj"
+-top robot_ultrasonic_ip
+-p virtex6
+-ofn "H:\Xilinx_Xps\openhw_pro\xps_proj\pcores\robot_ultrasonic_ip_v1_00_a\devl\synthesis\robot_ultrasonic_ip_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib robot_ultrasonic_ip_v1_00_a

@@ -1,0 +1,8 @@
+TYPE:packages-repo
+COMPONENT_FILE:Kconfig
+BUILD_FILE:Makefile
+BUILD_FILE:scan-architecture.sh
+BUILD_FILE:config
+BUILD_FILE:Kconfig.defaults
+BUILDALL:build install
+BUILDconfig:notimplemented

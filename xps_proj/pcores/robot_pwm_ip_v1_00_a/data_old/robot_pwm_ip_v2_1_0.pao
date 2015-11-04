@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          H:/Xilinx_Xps/openhw_pro/xps_proj/pcores/robot_pwm_ip_v1_00_a/data/robot_pwm_ip_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Jun 26 15:36:46 2015 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib robot_pwm_ip_v1_00_a user_logic verilog
+lib robot_pwm_ip_v1_00_a robot_pwm_ip vhdl

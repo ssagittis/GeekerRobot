@@ -1,0 +1,7 @@
+JA1 JA2 JA3 JA4-----GPIO
+JA5 JA6 --³¬Éù²¨
+JA7 -- I2C_Scl
+JA8 -- I2C_Sda
+
+JB1 JB2 --pwm
+JB3 JB4 JB7 JB8 JB9 --steer

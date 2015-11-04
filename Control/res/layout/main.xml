@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+     <RelativeLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <Button
+        android:id="@+id/config"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/my_button"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="网络配置" >
+
+    </Button>
+    <!-- <Button
+        android:id="@+id/activate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button"
+        android:layout_toRightOf="@+id/config"
+        android:layout_toLeftOf="@+id/program"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="启用" >
+
+    </Button>-->
+	<Button
+        android:id="@+id/program"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="编程控制" >
+
+    </Button>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/conn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="建立连接" >
+    </Button>
+    
+     <RelativeLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" 
+        >
+        <Button
+        android:id="@+id/addWidget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/add_or_delete_widget_button"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="增加控件" ></Button>
+        <Button
+        android:id="@+id/deleteWidget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/add_or_delete_widget_button"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="删除控件"></Button>
+	<!--<TextView
+        android:id="@+id/sensorStateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:focusable="true"
+        android:scrollbars="vertical"
+        android:singleLine="true"
+        android:gravity="center_horizontal"
+        android:text="传感器状态"
+        android:textSize="30dp"
+        android:textColor="#000000" />-->
+          </RelativeLayout>
+       <!-- <ScrollView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:scrollbars="vertical"
+			android:fadingEdge="vertical"
+		>
+     <LinearLayout  
+         android:id="@+id/sensorLinearLayout"
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content" 
+        android:orientation="vertical" >
+        <Button
+        android:id="@+id/sensor1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sensor_state_button"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="传感器1\n参数1：xx，参数2：xx" >
+        
+    </Button>
+    <Button
+        android:id="@+id/sensor2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:background="@drawable/sensor_state_button"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="传感器2\n参数1：xx，参数2：xx" >
+        
+    </Button>
+    <Button
+        android:id="@+id/sensor3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:background="@drawable/sensor_state_button"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="传感器3\n参数1：xx，参数2：xx" >
+        
+    </Button>
+        </LinearLayout>
+        </ScrollView>-->
+         <ScrollView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:scrollbars="vertical"
+			android:fadingEdge="vertical"
+		>
+     <LinearLayout  
+         android:id="@+id/widgetL"
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal" >
+        <LinearLayout  
+         android:id="@+id/widgetLL"
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content" 
+        android:layout_weight="1"
+        android:orientation="vertical" >
+        </LinearLayout>
+        <LinearLayout  
+         android:id="@+id/widgetLR"
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content" 
+        android:layout_weight="1"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical" >
+        </LinearLayout>
+        
+        </LinearLayout>
+        </ScrollView>
+</LinearLayout>

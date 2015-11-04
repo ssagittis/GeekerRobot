@@ -1,0 +1,16 @@
+2364723183
+notsent
+
+command_total_run_petalinux-create=1
+command_failures_petalinux-create=0
+command_option_petalinux-create=--type
+command_option_value_petalinux-create=project
+command_option_petalinux-create=--template
+command_option_value_petalinux-create=zynq
+command_option_petalinux-create=--name
+command_option_value_petalinux-create=openhw_pt
+command_total_run_petalinux-config=1
+command_failures_petalinux-config=0
+command_option_petalinux-config=--get-hw-description
+command_option_petalinux-config=-p
+command_option_value_petalinux-config=../openhw_pt/

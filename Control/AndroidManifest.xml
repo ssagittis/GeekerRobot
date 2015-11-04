@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.control"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name=".ControlActivity"
+            android:alwaysRetainTaskState="true"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NetworkConfigurationActivity"
+            android:label="@string/title_activity_network_configuration" >
+        </activity>
+
+        <service
+            android:name=".NetSensorService"
+            android:enabled="true" >
+        </service>
+        <service
+            android:name=".ComponentsService"
+            android:enabled="true" >
+        </service>
+
+        <activity
+            android:name=".ProgramActivity"
+            android:label="@string/title_activity_program" >
+        </activity>
+        <activity
+            android:name=".AddWidgetActivity"
+            android:label="@string/title_activity_add_widget" >
+        </activity>
+        <activity
+            android:name=".AddComActivity"
+            android:label="@string/title_activity_add_com" >
+        </activity>
+        <activity
+            android:name=".VideoActivity"
+            android:label="@string/title_activity_video" >
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-sdk android:minSdkVersion="16" />
+
+</manifest>

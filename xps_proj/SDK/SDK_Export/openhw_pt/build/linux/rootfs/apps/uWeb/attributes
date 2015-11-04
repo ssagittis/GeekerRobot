@@ -1,0 +1,6 @@
+TYPE:apps
+BUILD_FILE:apps.common.mk
+COMPONENT_FILE:Makefile
+COPY_COMPONENT:Y
+BUILDALL:pre-build build post-build pre-install install
+BUILDconfig:notimplemented

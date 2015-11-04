@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    tools:context="com.control.AddWidgetActivity" >
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/nameEdit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="控件名字"
+        android:textColor="#000000"
+        android:textSize="20dp" >
+    </TextView>
+
+    <EditText
+        android:id="@+id/nameEdit"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/nameView"
+        android:textSize="18sp" >
+    </EditText>
+    <TextView
+        android:id="@+id/widgetView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameView"
+        android:layout_alignParentLeft="true"
+        android:text="控件类型"
+        android:textColor="#000000"
+        android:textSize="20dp" >
+    </TextView>
+     <LinearLayout  
+         android:id="@+id/inWidgetList"
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/widgetView"
+        android:orientation="vertical" >
+    </LinearLayout>
+    <LinearLayout  
+         android:id="@+id/outWidgetList"
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/inWidgetList"
+        android:orientation="vertical" >
+    </LinearLayout>
+    <Button
+        android:id="@+id/add"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outWidgetList"
+        android:background="@drawable/my_button"
+        android:text="添加" >
+    </Button>
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+##############################################################################
+## Filename:          H:\Xilinx_Xps\openhw_pro\xps_proj\pcores/robot_ultrasonic_ip_v1_00_a/data/robot_ultrasonic_ip_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Thu Jul 09 18:06:23 2015 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a proc_common_pkg vhdl
+lib proc_common_v3_00_a family_support vhdl
+lib proc_common_v3_00_a pselect_f vhdl
+lib proc_common_v3_00_a ipif_pkg vhdl
+lib proc_common_v3_00_a counter_f vhdl
+lib axi_lite_ipif_v1_01_a address_decoder vhdl
+lib robot_ultrasonic_ip_v1_00_a ultrasonic verilog
+lib axi_lite_ipif_v1_01_a slave_attachment vhdl
+lib robot_ultrasonic_ip_v1_00_a user_logic verilog
+lib axi_lite_ipif_v1_01_a axi_lite_ipif vhdl
+lib robot_ultrasonic_ip_v1_00_a robot_ultrasonic_ip vhdl

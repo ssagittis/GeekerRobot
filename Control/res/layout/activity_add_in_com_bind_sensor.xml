@@ -1,0 +1,259 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/pgbackground"
+    android:orientation="vertical" 
+    tools:context="com.control.AddComActivity" >
+ <ScrollView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:scrollbars="vertical"
+			android:fadingEdge="vertical"
+		> 
+<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="vertical" >		 
+<!-- <LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+     <TextView
+        android:id="@+id/IDText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ID"
+        android:textColor="#000000"
+        android:textSize="20dp" >
+    </TextView>
+
+    <EditText
+        android:id="@+id/IDEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890"
+        android:textSize="20sp" >
+    </EditText>
+</LinearLayout>-->
+<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/outputPosText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="输入口位置"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/outputPosEdit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890,"
+        android:textSize="20sp" >
+    </EditText>
+	</LinearLayout>
+	<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/para0Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="初始化参数0"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/para0Edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890"
+        android:textSize="20sp" >
+    </EditText>
+	</LinearLayout>
+	<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/para1Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="初始化参数1"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/para1Edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890"
+        android:textSize="20sp" >
+    </EditText>
+	</LinearLayout>
+	<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/para2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="初始化参数2"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/para2Edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890"
+        android:textSize="20sp" >
+    </EditText>
+	</LinearLayout>
+	<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/para3Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="初始化参数3"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/para3Edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890"
+        android:textSize="20sp" >
+    </EditText>
+    </LinearLayout>
+	<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/para4Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="初始化参数4"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/para4Edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890"
+        android:textSize="20sp" >
+    </EditText>
+	</LinearLayout>
+	<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/para5Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="初始化参数5"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/para5Edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890"
+        android:textSize="20sp" >
+    </EditText>
+	</LinearLayout>
+	<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/para6Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="初始化参数6"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/para6Edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890"
+        android:textSize="20sp" >
+    </EditText>
+	</LinearLayout>
+	<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/para7Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="初始化参数7"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/para7Edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:digits="1234567890"
+        android:textSize="20sp" >
+    </EditText>
+	</LinearLayout>
+<LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button"
+        android:layout_marginLeft="5dp"
+        android:text="ok" >
+    </Button>
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

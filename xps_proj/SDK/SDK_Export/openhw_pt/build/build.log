@@ -1,0 +1,14 @@
+[INFO ] generate /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/hw-description/system.dts
+[INFO ] oldconfig linux
+[INFO ] oldconfig linux/kernel
+[INFO ] oldconfig linux/rootfs ROOTFS_CONFIG=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/configs/rootfs/config KCONFIGFILE=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/rootfs/Kconfig
+[INFO ] generate /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/hw-description/system.dts
+[INFO ] oldconfig linux/kernel
+[INFO ] oldconfig linux/rootfs ROOTFS_CONFIG=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/configs/rootfs/config KCONFIGFILE=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/rootfs/Kconfig
+[INFO ] generate /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/hw-description/system.dts
+[INFO ] oldconfig linux
+[INFO ] oldconfig linux/kernel
+[INFO ] oldconfig linux/rootfs ROOTFS_CONFIG=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/configs/rootfs/config KCONFIGFILE=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/rootfs/Kconfig
+[INFO ] generate /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/hw-description/system.dts
+[INFO ] oldconfig linux/kernel
+[INFO ] oldconfig linux/rootfs ROOTFS_CONFIG=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/configs/rootfs/config KCONFIGFILE=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/rootfs/Kconfig

@@ -1,0 +1,5 @@
+TYPE:linux-kernel
+COMPONENT_FILE:Makefile
+BUILD_FILE:Makefile
+BUILD_FILE:get_initramfs_file
+BUILDALL:pre-build build post-build pre-install install

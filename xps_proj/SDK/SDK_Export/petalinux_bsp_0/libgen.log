@@ -1,0 +1,17 @@
+Release 14.7 - libgen Xilinx EDK 14.7 Build EDK_P.20131013
+ (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../xps_proj_hw_platform/system.xml -lp
+/home/lin/development/petalinux-v2013.10-final/components/edk_user_repository
+-pe ps7_cortexa9_1 -log libgen.log system.mss 
+
+ERROR:EDK:410 - iicps -
+   /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/petalinux_bsp
+   _0/system.mss line 285 - No IP instance named ps7_i2c_0 is present in the
+   hardware!
+ERROR:EDK:410 - iicps -
+   /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/petalinux_bsp
+   _0/system.mss line 291 - No IP instance named ps7_i2c_1 is present in the
+   hardware!
+ERROR:EDK:1206 - Errors occured while parsing MSS file.

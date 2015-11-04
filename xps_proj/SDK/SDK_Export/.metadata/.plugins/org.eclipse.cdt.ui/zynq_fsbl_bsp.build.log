@@ -1,0 +1,6 @@
+09:20:41 **** Build of project zynq_fsbl_bsp ****
+make -k all 
+Finished building libraries
+
+09:20:41 Build Finished (took 64ms)
+

@@ -1,0 +1,7 @@
+INFILE=H:\Xilinx_Xps\openhw_pro\xps_proj\implementation\system.ncd
+OUTFILE=H:\Xilinx_Xps\openhw_pro\xps_proj\implementation\system.bit
+FAMILY=Zynq
+PART=xc7z020-1clg484
+WORKINGDIR=H:\Xilinx_Xps\openhw_pro\xps_proj\implementation
+LICENSE=WebPack
+USER_INFO=_

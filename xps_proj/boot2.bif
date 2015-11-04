@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+	[bootloader]/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/zynq_fsbl/Debug/zynq_fsbl.elf
+	/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/implementation/system.bit
+	/home/lin/Develop/Xilinx_Xps/openhw_pro/ZedBoard_Linux_Design_original/ZedBoard_Linux_Design/boot_image/u-boot.elf
+}

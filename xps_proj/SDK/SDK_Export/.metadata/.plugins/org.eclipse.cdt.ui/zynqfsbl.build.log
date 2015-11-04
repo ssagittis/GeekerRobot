@@ -1,0 +1,6 @@
+09:20:42 **** Build of configuration Debug for project zynqfsbl ****
+make all 
+make: 对“all”无需做任何事。
+
+09:20:42 Build Finished (took 276ms)
+

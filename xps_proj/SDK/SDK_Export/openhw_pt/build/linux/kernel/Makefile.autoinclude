@@ -1,0 +1,7 @@
+PROOT:=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt
+INSTANCE:=linux/kernel
+-include /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/Makefile.export
+-include /home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/build/linux/kernel/Makefile.export
+CONFIGFILE:=/home/lin/Develop/Xilinx_Xps/openhw_pro/xps_proj/SDK/SDK_Export/openhw_pt/subsystems/linux/configs/kernel/config
+dir_linux_kernel_y=/home/lin/development/petalinux-v2013.10-final/components/linux-kernel/xlnx-3.8
+
